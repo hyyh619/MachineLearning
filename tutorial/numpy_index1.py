@@ -30,3 +30,7 @@ for row in A:
 # iterate all columns of matrix A.
 for column in A.T:
     print column
+    
+print A.flatten() 
+for item in A.flat:
+    print item
