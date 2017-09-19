@@ -15,8 +15,8 @@ import numpy as np
 import pandas as pd
 import pickle as pickle
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+#reload(sys)
+#sys.setdefaultencoding('utf8')
   
 # Multinomial Naive Bayes Classifier  
 def naive_bayes_classifier(train_x, train_y):  
@@ -115,30 +115,30 @@ if __name__ == '__main__':
                  'GBDT':gradient_boosting_classifier  
     }  
       
-    print ('reading training and testing data...')
+    print 'reading training and testing data...'
     train_x, train_y, test_x, test_y = read_data(data_file)  
     num_train, num_feat = train_x.shape  
     num_test, num_feat = test_x.shape  
     is_binary_class = (len(np.unique(train_y)) == 2)  
-    print ('******************** Data Info *********************')
-    print ('#training data: %d, #testing_data: %d, dimension: %d' % (num_train, num_test, num_feat)) 
+    print '******************** Data Info *********************'
+    print '#training data: %d, #testing_data: %d, dimension: %d' % (num_train, num_test, num_feat)
       
     for classifier in test_classifiers:  
-        print ('******************* %s ********************' % classifier)  
+        print '******************* %s ********************' % classifier 
         start_time = time.time()  
         model = classifiers[classifier](train_x, train_y)  
-        print ('training took %fs!' % (time.time() - start_time)) 
+        print 'training took %fs!' % (time.time() - start_time)
         predict = model.predict(test_x)  
-        print ('predict')
+        print 'predict'
         if model_save_file != None:  
             model_save[classifier] = model  
         if is_binary_class:  
             precision = metrics.precision_score(test_y, predict)  
             recall = metrics.recall_score(test_y, predict)  
-            print ('precision: %.2f%%, recall: %.2f%%' % (100 * precision, 100 * recall))
-        print ('accuracy')
+            print 'precision: %.2f%%, recall: %.2f%%' % (100 * precision, 100 * recall)
+        print 'accuracy'
         accuracy = metrics.accuracy_score(test_y, predict)  
-        print ('accuracy: %.2f%%' % (100 * accuracy))   
+        print 'accuracy: %.2f%%' % (100 * accuracy)  
   
     if model_save_file != None:  
         pickle.dump(model_save, open(model_save_file, 'wb'))
