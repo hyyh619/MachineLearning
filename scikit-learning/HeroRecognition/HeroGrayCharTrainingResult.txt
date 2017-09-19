@@ -1,0 +1,40 @@
+reading training and testing data...
+******************** Data Info *********************
+#training data: 2450, #testing_data: 622, dimension: 3200
+******************* NB ********************
+training took 0.227000s!
+predict
+accuracy
+accuracy: 93.89%
+******************* KNN ********************
+training took 0.345000s!
+predict
+accuracy
+accuracy: 97.43%
+******************* LR ********************
+training took 131.467000s!
+predict
+accuracy
+accuracy: 98.87%
+******************* RF ********************
+training took 0.761000s!
+predict
+accuracy
+accuracy: 96.95%
+******************* DT ********************
+training took 8.832000s!
+predict
+accuracy
+accuracy: 92.77%
+******************* SVM ********************
+training took 145.772000s!
+predict
+accuracy
+accuracy: 71.22%
+******************* GBDT ********************
+
+training took 959.195000s!
+predic>> >t
+accuracy
+
+accuracy: 88.75%
