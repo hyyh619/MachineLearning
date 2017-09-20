@@ -11,6 +11,8 @@ Created on Fri Mar 03 15:05:55 2017
 import sys 
 import time
 from sklearn import metrics
+from sklearn.externals.six import StringIO
+import pydot_ng as pydot
 import numpy as np
 import pandas as pd
 import pickle as pickle
@@ -22,7 +24,7 @@ import pickle as pickle
 def naive_bayes_classifier(train_x, train_y):  
     from sklearn.naive_bayes import MultinomialNB  
     model = MultinomialNB(alpha=0.01)  
-    model.fit(train_x, train_y)  
+    model.fit(train_x, train_y)
     return model  
   
   
@@ -30,7 +32,7 @@ def naive_bayes_classifier(train_x, train_y):
 def knn_classifier(train_x, train_y):  
     from sklearn.neighbors import KNeighborsClassifier  
     model = KNeighborsClassifier()  
-    model.fit(train_x, train_y)  
+    model.fit(train_x, train_y)
     return model  
   
   
@@ -38,7 +40,7 @@ def knn_classifier(train_x, train_y):
 def logistic_regression_classifier(train_x, train_y):  
     from sklearn.linear_model import LogisticRegression  
     model = LogisticRegression(penalty='l2')  
-    model.fit(train_x, train_y)  
+    model.fit(train_x, train_y)
     return model  
   
   
@@ -54,7 +56,11 @@ def random_forest_classifier(train_x, train_y):
 def decision_tree_classifier(train_x, train_y):  
     from sklearn import tree  
     model = tree.DecisionTreeClassifier()  
-    model.fit(train_x, train_y)  
+    model.fit(train_x, train_y)
+    dot_data = StringIO()
+    tree.export_graphviz(model, out_file=dot_data)
+    graph = pydot.graph_from_dot_data(dot_data.getvalue())
+    graph.write_pdf("HeroReg_DT.pdf")
     return model  
   
   
@@ -62,7 +68,7 @@ def decision_tree_classifier(train_x, train_y):
 def gradient_boosting_classifier(train_x, train_y):  
     from sklearn.ensemble import GradientBoostingClassifier  
     model = GradientBoostingClassifier(n_estimators=200)  
-    model.fit(train_x, train_y)  
+    model.fit(train_x, train_y) 
     return model  
   
   
@@ -70,7 +76,7 @@ def gradient_boosting_classifier(train_x, train_y):
 def svm_classifier(train_x, train_y):  
     from sklearn.svm import SVC  
     model = SVC(kernel='rbf', probability=True)  
-    model.fit(train_x, train_y)  
+    model.fit(train_x, train_y)    
     return model  
   
 # SVM Classifier using cross validation  
