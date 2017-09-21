@@ -87,8 +87,8 @@ def DefTestGraph(sampleBatch, labelBatch) :
 def Training(train_tfrecords, test_tfrecords, useRegularizer, trainSampleNum, testSampleNum):
     xTrain = tf.placeholder(tf.float32, name='input', shape=[None, 28, 28, 1])
     xTest = tf.placeholder(tf.float32, name='input', shape=[None, 28, 28, 1])
-    trainingSteps = trainSampleNum * EPOCH_NUM / BATCH_SIZE
-    testSteps = testSampleNum / BATCH_SIZE
+    trainingSteps = int(trainSampleNum * EPOCH_NUM / BATCH_SIZE)
+    testSteps = int(testSampleNum / BATCH_SIZE)
     
     trainSampleBatch, trainLabelBatch = GetBatch(train_tfrecords, "train")
     testSampleBatch, testLabelBatch = GetBatch(test_tfrecords, "test")
@@ -138,7 +138,10 @@ def main(argv=None):
     # if use regularizer, the best loss is 0.1
     # if not using regularizer, the best loss is 0.00048936
     # Training(fd.TF_RECORDS_PATH, fd.TF_RECORDS_PATH, False, fd.POKER_TRAIN_SAMPLES, fd.POKER_TEST_SAMPLES
-    Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, False, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
+    # Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, False, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
+    
+    # Test regular
+    Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, True, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
 
     # Just for test
     # Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, False, 10*BATCH_SIZE, fd.RUN_TEST_SAMPLES)
