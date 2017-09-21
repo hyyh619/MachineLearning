@@ -25,7 +25,7 @@ testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=Fals
 
 #将测试集的10000张图片划分成2500份，每份4张图，用于mini-batch输入。
 testloader = torch.utils.data.DataLoader(testset, batch_size=4, 
-                                          shuffle=False, num_workers=2)
+                                          shuffle=False, num_workers=0)
 classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
