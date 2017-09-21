@@ -6,7 +6,7 @@
     <ProjectGuid>2d5e88be-9865-47d8-9d52-637b2605c2fe</ProjectGuid>
     <ProjectTypeGuids>{a41c8ea1-112a-4a2d-9f91-29557995525f};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>classifier.py</StartupFile>
+    <StartupFile>Training2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -14,8 +14,8 @@
     <Name>PythonClassifierApplication1</Name>
     <RootNamespace>PythonClassifierApplication1</RootNamespace>
     <IsWindowsApplication>False</IsWindowsApplication>
-    <InterpreterId>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</InterpreterId>
-    <InterpreterVersion>2.7</InterpreterVersion>
+    <InterpreterId>{47ff3fec-5586-4515-a59a-dfe46392a000}</InterpreterId>
+    <InterpreterVersion>3.5</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,8 +27,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="classifier.py" />
+    <Compile Include="CNN.py" />
+    <Compile Include="cnn_mnist.py" />
+    <Compile Include="ConvertToTFRecord.py" />
+    <Compile Include="CreateFileList.py" />
+    <Compile Include="FileDefines.py" />
+    <Compile Include="FreezeModel.py" />
+    <Compile Include="GameCharacterCNN.py" />
+    <Compile Include="GameCharacterCNN2.py" />
+    <Compile Include="GameCNN.py" />
+    <Compile Include="GetSamples.py" />
+    <Compile Include="InputData.py" />
+    <Compile Include="LoadPB.py" />
+    <Compile Include="mnist_inference.py" />
+    <Compile Include="mnist_nn.py" />
+    <Compile Include="mnist_train.py" />
+    <Compile Include="SamplesDefine.py" />
+    <Compile Include="scikit-learn-tutorial2.py" />
+    <Compile Include="Training.py" />
+    <Compile Include="Training2.py" />
   </ItemGroup>
   <ItemGroup>
+    <InterpreterReference Include="{47ff3fec-5586-4515-a59a-dfe46392a000}\3.5" />
     <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\2.7" />
   </ItemGroup>
   <PropertyGroup>
