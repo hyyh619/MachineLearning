@@ -1,0 +1,6 @@
+model_checkpoint_path: "D:/Development/hy_code/MachineLearning/Tensorflow/GameCharacters_Tensorflow/Models/Num.pb5000.model-5001"
+all_model_checkpoint_paths: "D:/Development/hy_code/MachineLearning/Tensorflow/GameCharacters_Tensorflow/Models/Num.pb1000.model-1001"
+all_model_checkpoint_paths: "D:/Development/hy_code/MachineLearning/Tensorflow/GameCharacters_Tensorflow/Models/Num.pb2000.model-2001"
+all_model_checkpoint_paths: "D:/Development/hy_code/MachineLearning/Tensorflow/GameCharacters_Tensorflow/Models/Num.pb3000.model-3001"
+all_model_checkpoint_paths: "D:/Development/hy_code/MachineLearning/Tensorflow/GameCharacters_Tensorflow/Models/Num.pb4000.model-4001"
+all_model_checkpoint_paths: "D:/Development/hy_code/MachineLearning/Tensorflow/GameCharacters_Tensorflow/Models/Num.pb5000.model-5001"

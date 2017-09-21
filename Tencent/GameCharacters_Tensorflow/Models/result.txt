@@ -1,0 +1,61 @@
+After 0 training step(s), loss is 3.45821 
+After 100 training step(s), loss is 0.542863 
+After 200 training step(s), loss is 0.247847 
+After 300 training step(s), loss is 0.158886 
+After 400 training step(s), loss is 0.0334975 
+After 500 training step(s), loss is 0.0370247 
+After 600 training step(s), loss is 0.0430939 
+After 700 training step(s), loss is 0.0123992 
+After 800 training step(s), loss is 0.0244218 
+After 900 training step(s), loss is 0.0166935 
+After 1000 training step(s), loss is 0.0258969 
+After 1000 training step(s), loss on training batch is 0.0182331.
+test accuracy is 0.999592.
+After 1100 training step(s), loss is 0.0180165 
+After 1200 training step(s), loss is 0.0180171 
+After 1300 training step(s), loss is 0.00726782 
+After 1400 training step(s), loss is 0.00783787 
+After 1500 training step(s), loss is 0.00649158 
+After 1600 training step(s), loss is 0.0080762 
+After 1700 training step(s), loss is 0.0163125 
+After 1800 training step(s), loss is 0.00485819 
+After 1900 training step(s), loss is 0.00226334 
+After 2000 training step(s), loss is 0.00627587 
+After 2000 training step(s), loss on training batch is 0.00411087.
+test accuracy is 0.999728.
+After 2100 training step(s), loss is 0.00949083 
+After 2200 training step(s), loss is 0.00373345 
+After 2300 training step(s), loss is 0.00711127 
+After 2400 training step(s), loss is 0.00790711 
+After 2500 training step(s), loss is 0.00334699 
+After 2600 training step(s), loss is 0.00592594 
+After 2700 training step(s), loss is 0.0210663 
+After 2800 training step(s), loss is 0.00335282 
+After 2900 training step(s), loss is 0.00659051 
+After 3000 training step(s), loss is 0.00405036 
+After 3000 training step(s), loss on training batch is 0.00653697.
+test accuracy is 0.999864.
+After 3100 training step(s), loss is 0.00376261 
+After 3200 training step(s), loss is 0.176145 
+After 3300 training step(s), loss is 0.00138982 
+After 3400 training step(s), loss is 0.0031538 
+After 3500 training step(s), loss is 0.00303216 
+After 3600 training step(s), loss is 0.0013225 
+After 3700 training step(s), loss is 0.00306673 
+After 3800 training step(s), loss is 0.00356554 
+After 3900 training step(s), loss is 0.00792029 
+After 4000 training step(s), loss is 0.00378526 
+After 4000 training step(s), loss on training batch is 0.00363802.
+test accuracy is 1.
+After 4100 training step(s), loss is 0.00255995 
+After 4200 training step(s), loss is 0.00510056 
+After 4300 training step(s), loss is 0.00270504 
+After 4400 training step(s), loss is 0.137666 
+After 4500 training step(s), loss is 0.00113338 
+After 4600 training step(s), loss is 0.00301595 
+After 4700 training step(s), loss is 0.00328486 
+After 4800 training step(s), loss is 0.00339619 
+After 4900 training step(s), loss is 0.00319625 
+After 5000 training step(s), loss is 0.00223469 
+After 5000 training step(s), loss on training batch is 0.00359587.
+test accuracy is 0.999728.
