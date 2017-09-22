@@ -13,6 +13,8 @@
     <OutputPath>.</OutputPath>
     <Name>GameCharacter</Name>
     <RootNamespace>GameCharacter</RootNamespace>
+    <InterpreterId>{47ff3fec-5586-4515-a59a-dfe46392a000}</InterpreterId>
+    <InterpreterVersion>3.5</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +50,9 @@
     <Compile Include="Training.py" />
     <Compile Include="Training2.py" />
     <Compile Include="TrainingWithGenetic.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{47ff3fec-5586-4515-a59a-dfe46392a000}\3.5" />
   </ItemGroup>
   <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
   <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

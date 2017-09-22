@@ -109,8 +109,8 @@ def Training(train_tfrecords, test_tfrecords, useRegularizer, trainSampleNum, te
         start_time = time.time()
         
         # Test only
-        print ("Training steps: %d" %(trainingSteps))
-        trainingSteps = int(trainingSteps / 50)
+        #print ("Training steps: %d" %(trainingSteps))
+        #trainingSteps = int(trainingSteps / 50)
         # Test only
         
         for i in range(trainingSteps):
@@ -143,11 +143,11 @@ def Training(train_tfrecords, test_tfrecords, useRegularizer, trainSampleNum, te
 def main(argv=None):
     # if use regularizer, the best loss is 0.1
     # if not using regularizer, the best loss is 0.00048936
-    # Training(fd.TF_RECORDS_PATH, fd.TF_RECORDS_PATH, False, fd.POKER_TRAIN_SAMPLES, fd.POKER_TEST_SAMPLES
+    Training(fd.TF_RECORDS_PATH, fd.TF_RECORDS_PATH, False, fd.POKER_TRAIN_SAMPLES, fd.POKER_TEST_SAMPLES)
     # Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, False, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
     
     # Test regular
-    Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, True, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
+    #Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, True, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
 
     # Just for test
     # Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, False, 10*BATCH_SIZE, fd.RUN_TEST_SAMPLES)

@@ -1,2 +1,4 @@
-model_checkpoint_path: "Num.pb1000.model-1001"
+model_checkpoint_path: "Num.pb3000.model-3001"
 all_model_checkpoint_paths: "Num.pb1000.model-1001"
+all_model_checkpoint_paths: "Num.pb2000.model-2001"
+all_model_checkpoint_paths: "Num.pb3000.model-3001"
