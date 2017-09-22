@@ -53,7 +53,7 @@ net = Net()
 criterion = nn.CrossEntropyLoss() #叉熵损失函数
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)  #使用SGD（随机梯度下降）优化，学习率为0.001，动量为0.9
 
-for epoch in range(2): # 遍历数据集两次
+for epoch in range(100): # 遍历数据集两次
     
     running_loss = 0.0
     #enumerate(sequence, [start=0])，i序号，data是数据

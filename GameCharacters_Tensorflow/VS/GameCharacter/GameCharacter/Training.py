@@ -7,7 +7,7 @@ Created on Thu Apr 13 16:21:14 2017
 """
 import tensorflow as tf
 import FileDefines as fd
-import GameCharacterCNN2 as net
+import GameCharacterCNN as net
 import time
 
 # Super Parameters for CNN
@@ -45,16 +45,14 @@ def GetBatch(path, tfrecords):
     images  = tf.reshape(retyped_images, [fd.ROWS, fd.COLS, fd.DEPTH])
     example_batch, label_batch = tf.train.shuffle_batch(
             [images, labels], batch_size = BATCH_SIZE, capacity = CAPACITY, min_after_dequeue = MIN_DEQ)
-    
-    example_batch = tf.reshape(example_batch, [-1, 28, 28, 1], 'input')
     return example_batch, label_batch
 
 def DefTrainingGraph(sampleBatch, labelBatch, useRegularizer, trainingSteps) :
     if useRegularizer:
         regularizer = tf.contrib.layers.l2_regularizer(REGULARIZATION_RATE)
-        y, _ = net.inference(sampleBatch, True, regularizer)
+        y, _ = net.inference(sampleBatch, True, regularizer, False)
     else :
-        y, _ = net.inference(sampleBatch, True, None)
+        y, _ = net.inference(sampleBatch, True, None, False)
         
     globalStep = tf.Variable(0, trainable=False)
 
@@ -85,8 +83,6 @@ def DefTestGraph(sampleBatch, labelBatch) :
     return accuracy
 
 def Training(train_tfrecords, test_tfrecords, useRegularizer, trainSampleNum, testSampleNum):
-    xTrain = tf.placeholder(tf.float32, name='input', shape=[None, 28, 28, 1])
-    xTest = tf.placeholder(tf.float32, name='input', shape=[None, 28, 28, 1])
     trainingSteps = int(trainSampleNum * EPOCH_NUM / BATCH_SIZE)
     testSteps = int(testSampleNum / BATCH_SIZE)
     
@@ -107,15 +103,8 @@ def Training(train_tfrecords, test_tfrecords, useRegularizer, trainSampleNum, te
         saver = tf.train.Saver()
 
         start_time = time.time()
-        
-        # Test only
-        print ("Training steps: %d" %(trainingSteps))
-        trainingSteps = int(trainingSteps / 50)
-        # Test only
-        
         for i in range(trainingSteps):
-            trainSamples, trainLabels = sess.run([trainSampleBatch, trainLabelBatch])
-            sess.run(trainOp, feed_dict = {xTrain:trainSamples})
+            sess.run(trainOp)
 
             if i % 100 == 0:
                 duration = time.time() - start_time
@@ -130,11 +119,17 @@ def Training(train_tfrecords, test_tfrecords, useRegularizer, trainSampleNum, te
                 # Get the accuracy based on test set.
                 testAccuracy = 0.0
                 for i in range(testSteps):
-                    testSamples, testLabels = sess.run([testSampleBatch, testLabelBatch])
-                    testAccuracy = testAccuracy + sess.run(accuracy, feed_dict = {xTest:trainSamples})
+                    testAccuracy = testAccuracy + sess.run(accuracy)
 
                 testAccuracy = testAccuracy / testSteps;
                 print("test accuracy is %g." % (testAccuracy))
+
+        #fileName = fd.MODELS_PATH + 'GameCharacter1.pb'
+        #meta_graph_def = tf.train.export_meta_graph(filename = fileName)
+        #fileName = fd.MODELS_PATH + 'GameCharacter.pb'
+        #tf.train.write_graph(sess.graph_def, fd.MODELS_PATH, 'GameCharacter.pb', False) #proto
+        #modelName = fd.MODELS_PATH + fd.MODEL_NAME + ".pb"
+        #saver.save(sess, modelName)
 
         coord.request_stop()
         coord.join(threads)
@@ -144,10 +139,7 @@ def main(argv=None):
     # if use regularizer, the best loss is 0.1
     # if not using regularizer, the best loss is 0.00048936
     # Training(fd.TF_RECORDS_PATH, fd.TF_RECORDS_PATH, False, fd.POKER_TRAIN_SAMPLES, fd.POKER_TEST_SAMPLES
-    # Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, False, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
-    
-    # Test regular
-    Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, True, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
+    Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, False, fd.RUN_TRAIN_SAMPLES, fd.RUN_TEST_SAMPLES)
 
     # Just for test
     # Training(fd.RUN_TF_RECORDS_PATH, fd.RUN_TF_RECORDS_PATH, False, 10*BATCH_SIZE, fd.RUN_TEST_SAMPLES)
