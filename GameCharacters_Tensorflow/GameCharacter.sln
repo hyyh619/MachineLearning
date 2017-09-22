@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "GameCharacter", "GameCharacter\GameCharacter.pyproj", "{92CFEBD0-7663-4CE3-94F8-1704D75EB761}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "GameCharacter", "GameCharacter.pyproj", "{DB5C0DA7-4B7A-4537-91D7-BA4007F2FC7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,8 +11,8 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{92CFEBD0-7663-4CE3-94F8-1704D75EB761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92CFEBD0-7663-4CE3-94F8-1704D75EB761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5C0DA7-4B7A-4537-91D7-BA4007F2FC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5C0DA7-4B7A-4537-91D7-BA4007F2FC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
