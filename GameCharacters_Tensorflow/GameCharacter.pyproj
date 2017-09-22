@@ -6,7 +6,7 @@
     <ProjectGuid>db5c0da7-4b7a-4537-91d7-ba4007f2fc7f</ProjectGuid>
     <ProjectTypeGuids>{a41c8ea1-112a-4a2d-9f91-29557995525f};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>genetic_algorithm2.py</StartupFile>
+    <StartupFile>TrainingWithGenetic.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
